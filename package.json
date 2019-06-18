@@ -1,0 +1,15 @@
+{
+  "name": "thecatbot",
+  "version": "1.0.0",
+  "description": "A Discord bot about cat",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.0.0",
+    "request": "^2.88.0",
+    "translate": "^1.1.0"
+  },
+  "author": "Maximin Dubreil",
+  "license": "ISC",
+  "devDependencies": {},
+  "keywords": []
+}
