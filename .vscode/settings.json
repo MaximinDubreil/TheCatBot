@@ -1,4 +1,0 @@
-{
-    "eslint.provideLintTask": true,
-    "eslint.enable": false
-}

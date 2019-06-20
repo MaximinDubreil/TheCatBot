@@ -52,10 +52,10 @@ module.exports = class TheCatApi{
         })
     }
 
-    static httpGetCategories(callback,language){
+    static httpGetCategories(callback){
         request('https://api.thecatapi.com/v1/categories',function (error, response, body) {
             if(!error && response.statusCode === 200) {
-                callback(JSON.parse(body),language);
+                callback(JSON.parse(body));
             }else{
                 callback("TheCatApi ne répond pas : " + response.statusCode);
             }
