@@ -36,17 +36,13 @@ module.exports = class Cat extends Command{
     }
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-    static matchEnglish(message){
+    static match(message){
         return message.content.startsWith('!cat');
     }
-    static matchFrench(message){
-        return message.content.startsWith('!chat');
-    }
 
-    static action (message,language){
+    static action (message){
         let tab = message.content.split(" ");
         let format ='';
         let raceId ='';
@@ -58,8 +54,8 @@ module.exports = class Cat extends Command{
                 TheCatApi.httpGetMessages(function(response){
                     if(response.hasOwnProperty('url')){
                         let embedMessage = new Discord.RichEmbed()
-                        .setColor('#9b0007')
-                        .setImage(response.url)
+                            .setColor('#9b0007')
+                            .setImage(response.url);
                         message.channel.send(embedMessage);
                     }
                     
@@ -71,10 +67,10 @@ module.exports = class Cat extends Command{
                 TheCatApi.httpGetMessages(function(response){
                     if(response.hasOwnProperty('url')){
                         let embedMessage = new Discord.RichEmbed()
-                        .setColor('#00ff43')
-                        .setTitle(response.breeds[0].name)
-                        .setImage(response.url)
-                        .setDescription(response.breeds[0].description);
+                            .setColor('#00ff43')
+                            .setTitle(response.breeds[0].name)
+                            .setImage(response.url)
+                            .setDescription(response.breeds[0].description);
                         message.channel.send(embedMessage);
                     }
                 },format,raceId,categoryId)                
@@ -84,8 +80,8 @@ module.exports = class Cat extends Command{
                 TheCatApi.httpGetMessages(function(response){
                     if(response.hasOwnProperty('url')){
                         let embedMessage = new Discord.RichEmbed()
-                        .setColor('#ff6f7d')
-                        .setImage(response.url)
+                            .setColor('#ff6f7d')
+                            .setImage(response.url)
                         message.channel.send(embedMessage);
                     }
                 },format,raceId,categoryId)
@@ -93,16 +89,12 @@ module.exports = class Cat extends Command{
         }else if (tab.length === 1){
             TheCatApi.httpGetMessages(function(response){
                 let embedMessage = new Discord.RichEmbed()
-                .setColor('#00ff43')
-                .setImage(response.url)
+                    .setColor('#00ff43')
+                    .setImage(response.url);
                 message.channel.send(embedMessage);
             },format,raceId,categoryId)
         }else{
-            if (language=='english') {
-                message.channel.send('Please enter only one parameter, be the image format, the id of a race or the name of a category. To have the list of commands: !cat help')
-            }else if(language=='french'){
-                message.channel.send('Veuillez saisir un seul paramêtre, sois le format de l\'image, l\'id d\'une race ou le nom d\'une catégorie. Pour avoir la liste des commandes : !chat aide');
-            }
+            message.channel.send('Please enter only one parameter, be the image format, the id of a race or the name of a category. To have the list of commands: !cat help');
         }
     }
 }
