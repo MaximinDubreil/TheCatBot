@@ -1,22 +1,14 @@
 module.exports = class Command {
     static parse(message) {
-        if (this.matchEnglish(message)) {
-            this.action(message,'english');
+        if (this.match(message)) {
+            this.action(message);
             return true;
-        }else if (this.matchFrench(message)) {
-            this.action(message,'french') 
-            return true;  
         }
         return false;
     }
 
 
-    static matchEnglish(message) {
-        return false;
-    }
-    
-
-    static matchFrench(message) {
+    static match(message) {
         return false;
     }
    

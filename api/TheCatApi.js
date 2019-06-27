@@ -34,7 +34,7 @@ module.exports = class TheCatApi{
                     console.log(error.name);
                 }
             }else{
-                callback("TheCatApi ne répond pas : " + response.statusCode)
+                callback("TheCatApi does not respond : " + response.statusCode)
                 console.log(error);
             }
         })
@@ -46,7 +46,7 @@ module.exports = class TheCatApi{
             if (!error && response.statusCode === 200) {
                 callback(JSON.parse(body));
             }else{
-                callback("TheCatApi ne répond pas : " + response.statusCode);
+                callback("TheCatApi does not respond : " + response.statusCode);
                 //console.log(error);
             }
         })
@@ -57,7 +57,7 @@ module.exports = class TheCatApi{
             if(!error && response.statusCode === 200) {
                 callback(JSON.parse(body));
             }else{
-                callback("TheCatApi ne répond pas : " + response.statusCode);
+                callback("TheCatApi does not respond : " + response.statusCode);
             }
         })
     }
