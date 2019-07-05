@@ -19,7 +19,6 @@ module.exports = class Ping extends Command{
                     .setImage('http://www.letribunaldunet.fr/wp-content/uploads/2013/12/2261.gif.pagespeed.ce_.GzQEVE5ncE1.gif')
                     .setFooter(diff+' ms');
                 message.channel.send(embedMessage);
-                message.channel.send(foo);
             },'','',''
         )
     }
