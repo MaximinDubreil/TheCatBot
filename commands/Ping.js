@@ -26,11 +26,7 @@ module.exports = class Ping extends Command{
                 let diff = t2 - t1;
                 let embedMessage = new Discord.RichEmbed;
                 embedMessage.setTitle('Pong')
-<<<<<<< HEAD
                     .setImage(data[Math.floor(Math.random()*data.length)])
-=======
-                    .setImage('http://www.letribunaldunet.fr/wp-content/uploads/2013/12/2261.gif.pagespeed.ce_.GzQEVE5ncE1.gif')
->>>>>>> master
                     .setFooter(diff+' ms');
                 message.channel.send(embedMessage);
             },'','',''
