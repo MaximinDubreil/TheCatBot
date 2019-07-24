@@ -23,7 +23,4 @@ module.exports = class Category extends Command{
             message.channel.send(embedMessage);
         })
     }
-
-
-   
 }

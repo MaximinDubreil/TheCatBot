@@ -9,21 +9,9 @@ let options = {
 
 module.exports = class TheCatApi{
     static httpGetMessages (callback,format,raceId,categoryId){
-        if(format != ''){
-            options.qs.mime_types = format;
-        }else{
-            options.qs.mime_types = 'gif,jpg,png';
-        }
-        if(raceId != ''){
-            options.qs.breed_id = raceId;
-        }else{
-            options.qs.breed_id ='';
-        }
-        if(categoryId != ''){
-            options.qs.category_ids = categoryId;
-        }else{
-            options.qs.category_ids = '';
-        }
+        options.qs.mime_types = format;
+        options.qs.breed_id = raceId;
+        options.qs.category_ids = categoryId;
         
         request(options, function (error, response, body) {
             if (!error && response.statusCode === 200) {
